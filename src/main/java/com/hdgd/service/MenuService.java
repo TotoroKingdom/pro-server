@@ -8,7 +8,8 @@ import java.util.List;
 @Transactional
 public interface MenuService {
 
-    public Menu getMenuById(int id);
+    //根据用户id查询菜单
+    List<Menu> getMenuByUserID(int userID);
 
 
 }

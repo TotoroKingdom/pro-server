@@ -2,6 +2,7 @@ package com.hdgd.service.impl;
 
 import com.hdgd.mapper.MenuMapper;
 import com.hdgd.pojo.Menu;
+import com.hdgd.pojo.User;
 import com.hdgd.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,13 +13,12 @@ import java.util.List;
 public class MenuServiceImpl implements MenuService {
 
     @Autowired
-    MenuMapper menuMapper;
+    private MenuMapper menuMapper;
 
+    //根据用户ID查询菜单列表
     @Override
-    public Menu getMenuById(int id) {
-        Menu menu = menuMapper.getMenuById(id);
-        menu.setChildren(menuMapper.getMenuByParentId(id));
-        return menu;
+    public List<Menu> getMenuByUserID(int userID){
+        List<Menu> menus = menuMapper.getMenuByUserID(userID);
+        return menus;
     }
-
 }

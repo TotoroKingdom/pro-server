@@ -7,11 +7,15 @@ import java.util.List;
 @Data
 public class User {
 
-    private int userID;
+    private Integer userID;
     private String empName;
     private String username;
     private String password;
-    private String department;
+    private int departmentID;
     private String post;
+    private List<Weekly> weeklies;
+
+    private Integer pageNum;
+    private Integer pageSize;
 
 }

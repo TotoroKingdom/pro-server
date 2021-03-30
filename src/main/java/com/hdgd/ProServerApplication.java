@@ -5,7 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages = "com.hdgd.mapper")
+//@MapperScan(basePackages = "mapper")
+@MapperScan(value = "com.hdgd.mapper")
 public class ProServerApplication {
 
     public static void main(String[] args) {

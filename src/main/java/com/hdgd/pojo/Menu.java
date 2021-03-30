@@ -4,17 +4,22 @@ import lombok.Data;
 
 import java.util.List;
 
+
 @Data
 public class Menu {
-    private int id;
-    private String parentId;
-    private String menuName;
+
+    private int menuID;
     private String url;
+    private String path;
+    private String component;
+    private String name;
     private String icon;
-    private String orderNum;
-    private String open;
-    private String disabled;
-    private String perms;
-    private String type;
+    private Boolean keepAlive;
+    private Boolean requireAuth;
+    private int parentID;
+    private Boolean enabled;
     private List<Menu> children;
+
+
+
 }

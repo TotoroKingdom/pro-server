@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 public class Weekly {
@@ -12,7 +13,11 @@ public class Weekly {
     private int weeklyID;
     private int userID;
     private String weeklyContent;
-    private LocalDate startTime;
-    private LocalDate endTime;
+    private Date startTime;
+    private Date endTime;
+
+    private User user;
+
+
 
 }

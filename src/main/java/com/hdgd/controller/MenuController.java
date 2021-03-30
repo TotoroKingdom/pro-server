@@ -2,6 +2,7 @@ package com.hdgd.controller;
 
 import com.hdgd.pojo.Menu;
 import com.hdgd.service.MenuService;
+import com.hdgd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +17,11 @@ public class MenuController {
     @Autowired
     private MenuService menuService;
 
-    @GetMapping("/getMenu")
-    public Menu getMenuById(int id){
-        return menuService.getMenuById(id);
+    //根据用户ID查询菜单
+    @GetMapping("/menu")
+    public List<Menu> getMenuByUserID(int userID){
+        return menuService.getMenuByUserID(userID);
     }
+
 
 }

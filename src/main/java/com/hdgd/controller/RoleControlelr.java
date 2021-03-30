@@ -1,10 +1,7 @@
 package com.hdgd.controller;
 
-
-import com.hdgd.pojo.Weekly;
-import com.hdgd.pojo.WeeklyUser;
-import com.hdgd.service.WeeklyService;
-import com.hdgd.service.WeeklyUserService;
+import com.hdgd.pojo.Role;
+import com.hdgd.service.impl.RoleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,13 +11,14 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-public class WeeklyUserController {
+public class RoleControlelr {
 
     @Autowired
-    private WeeklyUserService weeklyUserService;
+    private RoleServiceImpl roleService;
 
-    @GetMapping("/weeklyView")
-    public List<WeeklyUser> weeklyView(){
-        return weeklyUserService.weeklyView();
+    @GetMapping("getRoleByUserID")
+    public List<Role> getRoleByUserID(int userID) {
+        return roleService.getRoleByUserID(userID);
     }
+
 }
